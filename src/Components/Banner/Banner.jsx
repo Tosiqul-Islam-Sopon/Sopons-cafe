@@ -10,8 +10,8 @@ const Banner = () => {
                 </div>
                 <p className='text-white text-center'>Learn and Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding problems to become an exceptionally well world-class Programmer.</p>
                 <div className='flex gap-5 items-center justify-center'>
-                    <button className='bg-[#0BE58A] p-3 rounded-xl font-medium'>Explore Now</button>
-                    <button className='text-white font-medium bg-transparent border border-white p-3 rounded-xl'>Our Feedback</button>
+                    <button className='bg-[#0BE58A] p-3 rounded-xl font-medium hover:bg-gray-200'>Explore Now</button>
+                    <button className='text-white font-medium bg-transparent border border-white p-3 rounded-xl hover:bg-green-500'>Our Feedback</button>
                 </div>
             </div>
         </div>

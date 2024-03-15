@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <div className='flex justify-between items-center lexend'>
             <div>
-                <h3 className='text-3xl font-bold '>Recipe Calories</h3>
+                <h3 className='text-3xl font-bold hover:bg-gray-200 p-2 rounded-xl'>Sopon&apos;s Cafe</h3>
             </div>
             <div className='flex justify-between gap-4'>
                 <p>Home</p>
