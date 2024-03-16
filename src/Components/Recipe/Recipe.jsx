@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import time from '../../assets/Images/time.png'
 import calory from '../../assets/Images/calory.png'
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, handleCooks }) => {
     const { recipe_name, recipe_image, short_description, ingredients,
         preparing_time, calories } = recipe;
     return (
@@ -34,13 +34,14 @@ const Recipe = ({ recipe }) => {
                     <p>{calories}</p>
                 </div>
             </div>
-            <button className='bg-[#0BE58A] rounded-2xl p-3 font-medium lexend'>Want to Cook</button>
+            <button onClick={()=>handleCooks(recipe)} className='bg-[#0BE58A] rounded-2xl p-3 font-medium lexend'>Want to Cook</button>
         </div>
     );
 };
 
 Recipe.propTypes = {
-    recipe: PropTypes.object.isRequired
+    recipe: PropTypes.object.isRequired,
+    handleCooks: PropTypes.func
 };
 
 export default Recipe;
