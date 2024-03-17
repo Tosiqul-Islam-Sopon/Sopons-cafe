@@ -21,8 +21,8 @@ const CurrentlyCooking = ({currentlyCooking, cookingTime, calories}) => {
 
                     <tbody>
                         {
-                            currentlyCooking.map(recipe => <tr key={recipe.recipe_id}>
-                                <td>{recipe.recipe_id}</td>
+                            currentlyCooking.map((recipe, index) => <tr key={recipe.recipe_id}>
+                                <td>{index + 1}</td>
                                 <td>{recipe.recipe_name}</td>
                                 <td>{recipe.preparing_time} minutes</td>
                                 <td>{recipe.calories} calories</td>

@@ -36,7 +36,7 @@ const Recipe = ({ recipe, handleCooks }) => {
                     <p>{calories} calories</p>
                 </div>
             </div>
-            <button onClick={() => handleCooks(recipe)} className='bg-[#0BE58A] rounded-2xl p-3 font-medium lexend'>Want to Cook</button>
+            <button onClick={() => handleCooks(recipe)} className='bg-[#0BE58A] rounded-2xl p-3 font-medium lexend hover:bg-gray-200'>Want to Cook</button>
             
         </div>
     );

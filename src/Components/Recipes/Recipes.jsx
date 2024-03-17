@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = ({handleCooks, toastState}) => {
+const Recipes = ({handleCooks}) => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
@@ -14,14 +14,13 @@ const Recipes = ({handleCooks, toastState}) => {
     }, [])
 
     return (
-        <div className='w-3/5 grid grid-cols-2 gap-2'>
+        <div className='lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-2'>
             {
                 recipes.map(data =>
                     <Recipe
                         key={data.recipe_id}
                         recipe={data}
                         handleCooks={handleCooks}
-                        toastState={toastState}
                     >
                     </Recipe>
                 )
@@ -31,9 +30,7 @@ const Recipes = ({handleCooks, toastState}) => {
 };
 
 Recipes.propTypes = {
-    handleCooks: PropTypes.func,
-    toastState: PropTypes.bool
-
+    handleCooks: PropTypes.func
 };
 
 export default Recipes;

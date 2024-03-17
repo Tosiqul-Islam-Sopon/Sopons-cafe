@@ -15,12 +15,10 @@ function App() {
   const [currentlyCooking, setCurrentlyCooking] = useState([]);
   const [cookingTime, setCookingTime] = useState(0);
   const [calories, setCalories] = useState(0);
-  const [toastState, setToastState] = useState(false);
 
 
   const handleCooks = recipe => {
     if (wantToCook.includes(recipe)) {
-      setToastState(true);
       toast.success("This recipe is already added !", {
         autoClose: 2000
       });
@@ -28,7 +26,6 @@ function App() {
     else {
       const newCooks = [...wantToCook, recipe];
       setWantToCook(newCooks);
-      setToastState(false);
     }
   }
   const handleCurrentlyCooking = (item) => {
@@ -48,10 +45,9 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <Our_recipes></Our_recipes>
-      <div className='flex justify-between gap-3'>
+      <div className='flex flex-col lg:flex-row justify-between gap-3'>
         <Recipes
           handleCooks={handleCooks}
-          toastState={toastState}
         ></Recipes>
         <Cook
           wantToCook={wantToCook}
