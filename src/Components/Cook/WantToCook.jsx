@@ -25,8 +25,8 @@ const WantToCook = ({wantToCook, handleCurrentlyCooking}) => {
                             wantToCook.map(recipe => <tr key={recipe.recipe_id}>
                                 <td>{recipe.recipe_id}</td>
                                 <td>{recipe.recipe_name}</td>
-                                <td>{recipe.preparing_time}</td>
-                                <td>{recipe.calories}</td>
+                                <td>{recipe.preparing_time} minutes</td>
+                                <td>{recipe.calories} calories</td>
                                 <td><button onClick={() => handleCurrentlyCooking(recipe)} className='bg-[#0BE58A] p-2 rounded-2xl'>Preparing</button></td>
                             </tr>
                             )

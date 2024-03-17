@@ -4,15 +4,7 @@ import './Cook.css'
 import WantToCook from './WantToCook';
 import CurrentlyCooking from './CurrentlyCooking';
 
-const Cook = ({ wantToCook, handleCurrentlyCooking, currentlyCooking }) => {
-    // const [cookings, setCookings] = useState([]);
-
-    // const handleCookings = (recipe) => {
-    //     const newCookings = [...cookings, recipe];
-    //     setCookings(newCookings);
-
-    //     // wantToCook = wantToCook.filter(data => data !== recipe);
-    // }
+const Cook = ({ wantToCook, handleCurrentlyCooking, currentlyCooking, cookingTime, calories }) => {
 
     return (
         <div className='w-2/5 border border-[#28282833] rounded-2xl space-y-3'>
@@ -21,7 +13,11 @@ const Cook = ({ wantToCook, handleCurrentlyCooking, currentlyCooking }) => {
                     wantToCook={wantToCook}
                     handleCurrentlyCooking={handleCurrentlyCooking}
                 ></WantToCook>
-                <CurrentlyCooking currentlyCooking={currentlyCooking}></CurrentlyCooking>
+                <CurrentlyCooking
+                    currentlyCooking={currentlyCooking}
+                    cookingTime={cookingTime}
+                    calories={calories}
+                ></CurrentlyCooking>
             </div>
 
         </div>
@@ -31,7 +27,9 @@ const Cook = ({ wantToCook, handleCurrentlyCooking, currentlyCooking }) => {
 Cook.propTypes = {
     wantToCook: PropTypes.array,
     handleCurrentlyCooking: PropTypes.func,
-    currentlyCooking: PropTypes.array
+    currentlyCooking: PropTypes.array,
+    cookingTime: PropTypes.number,
+    calories: PropTypes.number
 };
 
 export default Cook;

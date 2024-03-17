@@ -5,6 +5,8 @@ import calory from '../../assets/Images/calory.png'
 const Recipe = ({ recipe, handleCooks }) => {
     const { recipe_name, recipe_image, short_description, ingredients,
         preparing_time, calories } = recipe;
+
+    
     return (
         <div className='shadow-lg p-4 border border-[#28282833] rounded-2xl space-y-4'>
             <img className='h-[200px] w-[100%] rounded-2xl' src={recipe_image} alt="" />
@@ -31,10 +33,11 @@ const Recipe = ({ recipe, handleCooks }) => {
                 </div>
                 <div className='flex items-center gap-3'>
                     <img src={calory} alt="" />
-                    <p>{calories}</p>
+                    <p>{calories} calories</p>
                 </div>
             </div>
-            <button onClick={()=>handleCooks(recipe)} className='bg-[#0BE58A] rounded-2xl p-3 font-medium lexend'>Want to Cook</button>
+            <button onClick={() => handleCooks(recipe)} className='bg-[#0BE58A] rounded-2xl p-3 font-medium lexend'>Want to Cook</button>
+            
         </div>
     );
 };

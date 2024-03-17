@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = ({handleCooks}) => {
+const Recipes = ({handleCooks, toastState}) => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const Recipes = ({handleCooks}) => {
                         key={data.recipe_id}
                         recipe={data}
                         handleCooks={handleCooks}
+                        toastState={toastState}
                     >
                     </Recipe>
                 )
@@ -30,7 +31,8 @@ const Recipes = ({handleCooks}) => {
 };
 
 Recipes.propTypes = {
-    handleCooks: PropTypes.func
+    handleCooks: PropTypes.func,
+    toastState: PropTypes.bool
 
 };
 

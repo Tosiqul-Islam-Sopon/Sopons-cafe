@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
-const CurrentlyCooking = ({currentlyCooking}) => {
+const CurrentlyCooking = ({currentlyCooking, cookingTime, calories}) => {
+    
     return (
         <div>
             <div className="p-6 space-y-3">
@@ -23,16 +24,16 @@ const CurrentlyCooking = ({currentlyCooking}) => {
                             currentlyCooking.map(recipe => <tr key={recipe.recipe_id}>
                                 <td>{recipe.recipe_id}</td>
                                 <td>{recipe.recipe_name}</td>
-                                <td>{recipe.preparing_time}</td>
-                                <td>{recipe.calories}</td>
+                                <td>{recipe.preparing_time} minutes</td>
+                                <td>{recipe.calories} calories</td>
                             </tr>
                             )
                         }
                         <tr>
                             <td></td>
                             <td></td>
-                            <td>Total Time = 45 minutes</td>
-                            <td>Total Calories = 1050 calories</td>
+                            <td>Total Time = {cookingTime} minutes</td>
+                            <td>Total Calories = {calories} calories</td>
                         </tr>
                     </tbody>
                 </table>
@@ -42,7 +43,9 @@ const CurrentlyCooking = ({currentlyCooking}) => {
 };
 
 CurrentlyCooking.propTypes = {
-    currentlyCooking: PropTypes.array
+    currentlyCooking: PropTypes.array,
+    cookingTime: PropTypes.number,
+    calories: PropTypes.number
 };
 
 export default CurrentlyCooking;
